@@ -1,4 +1,4 @@
 -- Drops the blogger if it exists currently --
-DROP DATABASE IF EXISTS d&d_db;
+DROP DATABASE IF EXISTS dandd_db;
 -- Creates the "blogger" database --
-CREATE DATABASE d&d_db;
+CREATE DATABASE dandd_db;
