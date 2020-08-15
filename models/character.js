@@ -120,13 +120,67 @@ module.exports = function(sequelize, DataTypes) {
     },
     flaws: {
       type: DataTypes.STRING
+    },
+    acrobatics: {
+      type: DataTypes.INTEGER
+    },
+    animalHandling: {
+      type: DataTypes.INTEGER
+    },
+    arcana: {
+      type: DataTypes.INTEGER
+    },
+    athletics: {
+      type: DataTypes.INTEGER
+    },
+    deception: {
+      type: DataTypes.INTEGER
+    },
+    history: {
+      type: DataTypes.INTEGER
+    },
+    insight: {
+      type: DataTypes.INTEGER
+    },
+    intimidation: {
+      type: DataTypes.INTEGER
+    },
+    investigation: {
+      type: DataTypes.INTEGER
+    },
+    medicine: {
+      type: DataTypes.INTEGER
+    },
+    nature: {
+      type: DataTypes.INTEGER
+    },
+    perception: {
+      type: DataTypes.INTEGER
+    },
+    performance: {
+      type: DataTypes.INTEGER
+    },
+    persuasion: {
+      type: DataTypes.INTEGER
+    },
+    religion: {
+      type: DataTypes.INTEGER
+    },
+    sleightOfHand: {
+      type: DataTypes.INTEGER
+    },
+    stealth: {
+      type: DataTypes.INTEGER
+    },
+    survival: {
+      type: DataTypes.INTEGER
     }
   });
 
   Character.associate = function(models) {
-    // We're saying that a Character should belong to an Author
-    // A Character can't be created without an Author due to the foreign key constraint
-    Character.belongsTo(models.Author, {
+    // We're saying that a Character should belong to an User
+    // A Character can't be created without an User due to the foreign key constraint
+    Character.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
