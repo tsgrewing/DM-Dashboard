@@ -1,5 +1,9 @@
 {
-  "name": "1-Passport-Example",
+  "name": "project-2",
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/tsgrewing/project-2.git"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
