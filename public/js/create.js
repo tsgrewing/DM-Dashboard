@@ -1,6 +1,6 @@
 const charName = $("#charName");
-const charClass = $("#charClass").val();
-const charRace = $("#charRace").val();
+const charClass = $("#charClass");
+const charRace = $("#charRace");
 const createForm = $(".create-form");
 
 let hitPoints = 0;
@@ -10,35 +10,38 @@ const stats = [15, 14, 13, 12, 10, 8];
 $(createForm).on("submit", event => {
   event.preventDefault();
 
+  const charC = charClass.val();
   if (!charName.val().trim()) {
     return;
   }
 
   //get hit points based on class selection
   $.ajax({
-    url: `https://www.dnd5eapi.co/api/classes/${charClass.toLowerCase()}`,
+    url: `https://www.dnd5eapi.co/api/classes/${charC.toLowerCase()}`,
     method: "GET"
   }).then(response => {
     hitPoints = response.hit_die;
-  });
-
-  getStats(stats).then(response => {
-    // Constructing a character object to hand to the database
-    const newChar = {
-      name: titleInput.val().trim(),
-      class: charRace,
-      race: charClass,
-      hp: hitPoints,
-      str: response[0],
-      dex: response[1],
-      con: response[2],
-      int: response[3],
-      wis: response[4],
-      cha: response[5]
-    };
-    createChar(newChar);
+    getStats(stats);
   });
 });
+
+// Constructing a character object to hand to the database
+
+const generateCharacter = () => {
+  const newChar = {
+    name: charName.val().trim(),
+    race: charRace.val(),
+    class: charClass.val(),
+    hp: hitPoints,
+    str: stats[0],
+    dex: stats[1],
+    con: stats[2],
+    int: stats[3],
+    wis: stats[4],
+    cha: stats[5]
+  };
+  createChar(newChar);
+};
 
 const getStats = array => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -47,7 +50,9 @@ const getStats = array => {
     array[i] = array[j];
     array[j] = temp;
   }
+  generateCharacter();
 };
+
 const createChar = Character => {
   $.post("/api/characters/", Character, () => {
     window.location.href = "/characters";

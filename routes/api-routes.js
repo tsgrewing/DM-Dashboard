@@ -58,8 +58,8 @@ module.exports = function(app) {
       race: req.body.race,
       str: req.body.str,
       hp: req.body.hp
-    }).then(dbPost => {
-      res.json(dbPost);
+    }).then(dbCharacter => {
+      res.json(dbCharacter);
     });
   });
 
@@ -68,8 +68,18 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(dbPost => {
-      res.json(dbPost);
+    }).then(dbCharacter => {
+      res.json(dbCharacter);
+    });
+  });
+
+  app.get("/api/characters/:id", (req, res) => {
+    db.Character.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbCharacter => {
+      res.json(dbCharacter);
     });
   });
 };

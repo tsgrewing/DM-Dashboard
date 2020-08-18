@@ -1,42 +1,46 @@
-const express = require("express");
-const router = express.Router();
+const db = require("../models");
 
-const character = require("../models/character.js");
-
-router.get("/", (req, res) => {
-  character.selectAll(data => {
-    const hbsObject = {
-      characters: data
-    };
-    res.render("userPage", hbsObject);
+// Routes
+// =============================================================
+module.exports = function(app) {
+  app.get("/api/todos", (req, res) => {
+    db.Character.findAll({}).then(characterDB => {
+      res.json(dbTodo);
+    });
   });
-});
 
-router.post("/api/characters", (req, res) => {
-  character.insertOne(
-    ["name", "class", "race"],
-    [req.body.charName, req.body.class, req.body.race],
-    result => {
-      res.json({ id: result.insertId });
-    }
-  );
-});
+  app.post("/api/todos", (req, res) => {
+    db.Todo.create({
+      text: req.body.text,
+      complete: req.body.complete
+    }).then(dbTodo => {
+      res.json(dbTodo);
+    });
+  });
 
-// router.put("/api/characters/:id", (req, res) => {
-//   const condition = "id = " + req.params.id;
+  app.delete("/api/todos/:id", (req, res) => {
+    db.Todo.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbTodo => {
+      res.json(dbTodo);
+    });
+  });
 
-//   character.updateOne(
-//     {
-//       devoured: req.body.devoured
-//     },
-//     condition,
-//     result => {
-//       if (result.changedRows === 0) {
-//         return res.status(404).end();
-//       }
-//       res.status(200).end();
-//     }
-//   );
-// });
-
-module.exports = router;
+  app.put("/api/todos", (req, res) => {
+    db.Todo.update(
+      {
+        text: req.body.text,
+        complete: req.body.complete
+      },
+      {
+        where: {
+          id: req.body.id
+        }
+      }
+    ).then(dbTodo => {
+      res.json(dbTodo);
+    });
+  });
+};
