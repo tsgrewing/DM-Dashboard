@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 router.post("/api/characters", (req, res) => {
   character.insertOne(
     ["name", "class", "race"],
-    [req.body.name, req.body.class, req.body.race],
+    [req.body.charName, req.body.class, req.body.race],
     result => {
       res.json({ id: result.insertId });
     }

@@ -1,11 +1,3 @@
-$(document).ready(() => {
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  $.get("/api/user_data").then(data => {
-    $(".member-name").text(data.email);
-  });
-});
-
 module.exports = function(sequelize, DataTypes) {
   const Character = sequelize.define("Character", {
     name: {
@@ -23,16 +15,12 @@ module.exports = function(sequelize, DataTypes) {
     level: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+      default: 1
     },
     xp: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+      default: 0
     },
     alignment: {
       type: DataTypes.STRING,
