@@ -50,4 +50,26 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.post("/api/characters", (req, res) => {
+    db.Character.create({
+      name: req.body.name,
+      class: req.body.class,
+      race: req.body.race,
+      str: req.body.str,
+      hp: req.body.hp
+    }).then(dbPost => {
+      res.json(dbPost);
+    });
+  });
+
+  app.delete("/api/characters/:id", (req, res) => {
+    db.Character.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbPost => {
+      res.json(dbPost);
+    });
+  });
 };

@@ -1,13 +1,13 @@
 <h2>Add a Character</h2>
-    <form>
+    <form class="create-form">
         <div class="form-row">
             <div class="form-group col-md-4">
-            <label for="inputCity">Character Name:</label>
+            <label for="charName">Character Name:</label>
             <input type="text" class="form-control" id="charName">
             </div>
             <div class="form-group col-md-4">
-            <label for="inputState">Race</label>
-            <select id="inputState" class="form-control">
+            <label for="charRace">Race</label>
+            <select id="charRace" class="form-control">
                 <option>Dragonborn</option>
                 <option>Dwarf</option>
                 <option>Elf</option>
@@ -20,8 +20,8 @@
             </select>
             </div>
             <div class="form-group col-md-4">
-            <label for="inputState">Class</label>
-            <select id="inputState" class="form-control">
+            <label for="charClass">Class</label>
+            <select id="charClass" class="form-control">
                 <option>Barbarian</option>
                 <option>Bard</option>
                 <option>Cleric</option>
@@ -37,10 +37,6 @@
             </select>            
             </div>
         </div>
-        <div class="form-group">
-            <div class="form-check">
-                <label for="body">Description</label>
-				<textarea placeholder="Description" class="form-control" rows="5" id="description"></textarea>
-            </div>
-        </div>
     </form>
+
+  <script type="text/javascript" src="js/create.js"></script>
