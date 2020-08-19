@@ -14,12 +14,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     level: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       default: 1
     },
     xp: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       default: 0
     },
     alignment: {

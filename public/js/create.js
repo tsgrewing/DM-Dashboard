@@ -55,6 +55,8 @@ const getStats = array => {
 
 const createChar = Character => {
   $.post("/api/characters/", Character, () => {
-    window.location.href = "/characters";
+    app.get("/members", isAuthenticated, (req, res) => {
+      res.render("members");
+    });
   });
 };
