@@ -26,8 +26,6 @@ module.exports = function(app) {
   app.get("/createCharacter", isAuthenticated, (req, res) => {
     res.render("createCharacter");
   });
-<<<<<<< HEAD
-<<<<<<< HEAD
 
   app.get("/index", isAuthenticated, (req, res) => {
     db.Character.findAll().then(data => {
@@ -38,10 +36,10 @@ module.exports = function(app) {
       console.log(hbsObject);
       res.render("index", hbsObject);
     });
-=======
 
   app.get("/index", isAuthenticated, (req, res) => {
     res.render("index");
->>>>>>> f7c487788610ecee9e2f282462b5a305918b36a3
+       f7c487788610ecee9e2f282462b5a305918b36a3
   });
-};
+});
+}
