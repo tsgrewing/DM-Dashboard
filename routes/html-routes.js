@@ -1,8 +1,9 @@
 // Requiring path to so we can use relative routes to our HTML files
 // const path = require("path");
-
+const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const character = require("../models/character");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -28,6 +29,13 @@ module.exports = function(app) {
   });
 
   app.get("/index", isAuthenticated, (req, res) => {
-    res.render("index");
+    db.Character.findAll().then(data => {
+      // console.log(data);
+      const hbsObject = {
+        characters: data
+      };
+      console.log(hbsObject);
+      res.render("index", hbsObject);
+    });
   });
 };

@@ -4,7 +4,6 @@ module.exports = function(app) {
   app.post("/api/characters", (req, res) => {
     // eslint-disable-next-line prettier/prettier
     const { name, race, str, dex, con, int, wis, cha, level, xp, hp } = req.body;
-    // console.log(name, race, str, dex, con, int, wis, cha, level, xp, hp);
     db.Character.create({
       name,
       class: req.body.class,
@@ -39,6 +38,12 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(dbCharacter => {
+      res.json(dbCharacter);
+    });
+  });
+
+  app.get("/api/characters/", (req, res) => {
+    db.Character.findAll().then(dbCharacter => {
       res.json(dbCharacter);
     });
   });
