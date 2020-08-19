@@ -16,7 +16,6 @@ module.exports = function(app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render("createCharacter");
     }
     res.render("login");
   });
@@ -25,5 +24,12 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     res.render("createCharacter");
+  });
+  app.get("/index", (req, res) => {
+    // If the user creates character, send them to index
+    if (req.user) {
+      res.render("createCharacter");
+    }
+    res.render("index");
   });
 };
