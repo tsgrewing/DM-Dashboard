@@ -13,76 +13,70 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     level: {
-      type: DataTypes.INTEGER,
-      default: 1
+      type: DataTypes.INTEGER
     },
     xp: {
-      type: DataTypes.INTEGER,
-      default: 0
+      type: DataTypes.INTEGER
     },
     alignment: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      type: DataTypes.STRING
     },
     race: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     str: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     dex: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     con: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     int: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     wis: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     cha: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     strSave: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     dexSave: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     conSave: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     intSave: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     wisSave: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     chaSave: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     passiveWisdom: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     hp: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     hitdice: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     armor: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     initiative: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     speed: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     traits: {
       type: DataTypes.STRING

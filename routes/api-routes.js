@@ -52,12 +52,21 @@ module.exports = function(app) {
   });
 
   app.post("/api/characters", (req, res) => {
+    // eslint-disable-next-line prettier/prettier
+    const { name, race, str, dex, con, int, wis, cha, level, xp, hp } = req.body;
     db.Character.create({
-      name: req.body.name,
+      name,
       class: req.body.class,
-      race: req.body.race,
-      str: req.body.str,
-      hp: req.body.hp
+      race,
+      str,
+      dex,
+      con,
+      int,
+      wis,
+      cha,
+      hp,
+      xp,
+      level
     }).then(dbCharacter => {
       res.json(dbCharacter);
     });
