@@ -56,9 +56,7 @@ const getStats = array => {
 };
 
 const createChar = Character => {
-  $.post("/api/characters/", Character, () => {
-    app.get("/index", (req, res) => {
-      res.render("index");
-    });
+  $.post("/api/characters/", Character).then(() => {
+    window.location.replace("/index");
   });
 };

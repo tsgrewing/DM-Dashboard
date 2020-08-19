@@ -1,46 +1,45 @@
 const db = require("../models");
 
-// Routes
-// =============================================================
 module.exports = function(app) {
-  app.get("/api/todos", (req, res) => {
-    db.Character.findAll({}).then(characterDB => {
-      res.json(dbTodo);
+  app.post("/api/characters", (req, res) => {
+    // eslint-disable-next-line prettier/prettier
+    const { name, race, str, dex, con, int, wis, cha, level, xp, hp } = req.body;
+    // console.log(name, race, str, dex, con, int, wis, cha, level, xp, hp);
+    db.Character.create({
+      name,
+      class: req.body.class,
+      race,
+      str,
+      dex,
+      con,
+      int,
+      wis,
+      cha,
+      hp,
+      xp,
+      level
+    }).then(dbCharacter => {
+      res.json(dbCharacter);
     });
   });
 
-  app.post("/api/todos", (req, res) => {
-    db.Todo.create({
-      text: req.body.text,
-      complete: req.body.complete
-    }).then(dbTodo => {
-      res.json(dbTodo);
-    });
-  });
-
-  app.delete("/api/todos/:id", (req, res) => {
-    db.Todo.destroy({
+  app.delete("/api/characters/:id", (req, res) => {
+    db.Character.destroy({
       where: {
         id: req.params.id
       }
-    }).then(dbTodo => {
-      res.json(dbTodo);
+    }).then(dbCharacter => {
+      res.json(dbCharacter);
     });
   });
 
-  app.put("/api/todos", (req, res) => {
-    db.Todo.update(
-      {
-        text: req.body.text,
-        complete: req.body.complete
-      },
-      {
-        where: {
-          id: req.body.id
-        }
+  app.get("/api/characters/:id", (req, res) => {
+    db.Character.findOne({
+      where: {
+        id: req.params.id
       }
-    ).then(dbTodo => {
-      res.json(dbTodo);
+    }).then(dbCharacter => {
+      res.json(dbCharacter);
     });
   });
 };

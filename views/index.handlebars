@@ -1,1 +1,16 @@
 <div class="home-intro"></div>
+<div class="row justify-content-around list-wrapper">
+    <div class="col-sm-10 col-md-5">
+        <ul  id="characterList">
+            <h2>Available Characters</h2>
+        {{#each characters}}
+            <li class="charListItem">
+                <p class="charSelect" data-id="{{id}}">{{name}} - {{race}} - {{class}}</p>
+                <button class="delete" data-id="{{id}}">
+                    Delete
+                </button>
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+</div>
