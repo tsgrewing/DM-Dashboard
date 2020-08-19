@@ -1,5 +1,3 @@
-const rollDice = $("#rollDice")
-
 function rollDice(num, sides) {
     return num + Math.floor(Math.random() * ((sides*num)-num + 1))
   }
