@@ -39,7 +39,6 @@ module.exports = function(app) {
 
   app.get("/index", isAuthenticated, (req, res) => {
     res.render("index");
-       f7c487788610ecee9e2f282462b5a305918b36a3
   });
 });
 }
