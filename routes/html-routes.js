@@ -17,7 +17,6 @@ module.exports = function(app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render("createCharacter");
     }
     res.render("login");
   });
@@ -27,6 +26,7 @@ module.exports = function(app) {
   app.get("/createCharacter", isAuthenticated, (req, res) => {
     res.render("createCharacter");
   });
+<<<<<<< HEAD
 
   app.get("/index", isAuthenticated, (req, res) => {
     db.Character.findAll().then(data => {
