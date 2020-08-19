@@ -26,4 +26,11 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.render("createCharacter");
   });
+  app.get("/index", (req, res) => {
+    // If the user creates character, send them to index
+    if (req.user) {
+      res.render("createCharacter");
+    }
+    res.render("index");
+  });
 };
