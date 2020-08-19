@@ -14,12 +14,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     level: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       default: 1
     },
     xp: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       default: 0
     },
     alignment: {
@@ -31,79 +29,60 @@ module.exports = function(sequelize, DataTypes) {
     },
     race: {
       type: DataTypes.STRING,
-      allowNull: false
     },
     str: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     dex: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     con: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     int: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     wis: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     cha: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     strSave: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     dexSave: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     conSave: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     intSave: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     wisSave: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     chaSave: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     passiveWisdom: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     hp: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     hitdice: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     armor: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     initiative: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     speed: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     traits: {
       type: DataTypes.STRING
@@ -173,15 +152,15 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Character.associate = function(models) {
-    // We're saying that a Character should belong to an User
-    // A Character can't be created without an User due to the foreign key constraint
-    Character.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Character.associate = function(models) {
+  //   // We're saying that a Character should belong to an User
+  //   // A Character can't be created without an User due to the foreign key constraint
+  //   Character.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return Character;
 };

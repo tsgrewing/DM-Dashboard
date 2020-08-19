@@ -4,7 +4,7 @@
             <h2>Available Characters</h2>
         {{#each burgers}}
             <li class="characterList">
-                </a><p>{{name}} - {{race}} - {{class}}</p>
+                <p class="charSelect" data-id="{{id}}">{{name}} - {{race}} - {{class}}</p>
                 <button class="delete" data-id="{{id}}">
                     Delete
                 </button>
