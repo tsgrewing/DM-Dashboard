@@ -52,14 +52,12 @@
             <div class="form-row">
                 <div class="form-group">
                     {{!-- drop down populated with characters from database --}}
-                    <label for="spellSelect">Monsters</label>
-                    <select id="spellSelect" class="form-control">
+                    <label for="monsterSelect">Monsters</label>
+                    <select id="monsterSelect" class="form-control">
                         {{#each monsters}}
-                            {{#each results}}
-                            <option class="spellItem" data-index="{{this.url}}">
+                            <option class="monsterItem" data-index="{{this.url}}">
                                 {{this.name}}
                             </option>
-                        {{/each}}
                         {{/each}}
                     </select>
                     {{!-- div to be populated by whichever character is selected in dropdown --}}
@@ -72,14 +70,12 @@
             <div class="form-row">
                 <div class="form-group">
                     {{!-- drop down populated with characters from database --}}
-                    <label for="spellSelect">Equipment</label>
-                    <select id="spellSelect" class="form-control">
+                    <label for="equipSelect">Equipment</label>
+                    <select id="equipSelect" class="form-control">
                         {{#each equipment}}
-                            {{#each results}}
-                            <option class="spellItem" data-index="{{this.url}}">
+                            <option class="equipItem" data-index="{{this.url}}">
                                 {{this.name}}
                             </option>
-                        {{/each}}
                         {{/each}}
                     </select>
                     {{!-- div to be populated by whichever character is selected in dropdown --}}

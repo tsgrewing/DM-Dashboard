@@ -4,9 +4,10 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 // const character = require("../models/character");
-const { JSDOM } = require( "jsdom" );
-const { window } = new JSDOM( "" );
-const $ = require( "jquery" )( window );
+const { JSDOM } = require("jsdom");
+const { window } = new JSDOM("");
+const $ = require("jquery")(window);
+let hbsObject={}
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -32,26 +33,58 @@ module.exports = function(app) {
   });
 
   app.get("/index", isAuthenticated, (req, res) => {
-    let hbsObject = {};
+    // let hbsObject = {};
     // get character info from database
     db.Character.findAll().then(data => {
+      // let hbsObject={}
       const charObj = {
         characters: data
       };
       hbsObject = { ...charObj };
-      console.log(hbsObject)
-      res.render("index", hbsObject)
+
+      $.ajax({
+        url: "https://www.dnd5eapi.co/api/spells",
+        method: "GET"
+      }).then(spellRes => {
+        const spellObj = {
+          spells: spellRes.results
+        };
+        hbsObject = { ...hbsObject, ...spellObj}
+
+        $.ajax({
+          url: "https://www.dnd5eapi.co/api/monsters",
+          method: "GET"
+      }).then(monsterRes => {
+          const monsterObj = {
+            monsters: monsterRes.results
+          };
+          hbsObject = { ...hbsObject, ...monsterObj}
+
+          $.ajax({
+            url: "https://www.dnd5eapi.co/api/equipment",
+            method: "GET"
+        }).then(equipRes => {
+            const equipObj = {
+              equipment: equipRes.results
+            };
+            hbsObject = { ...hbsObject, ...equipObj}
+
+            console.log(hbsObject)
+            res.render("index", hbsObject)
+        })
+        });
+      });
+      
     });
     //   // then get spell info from dNd api and add it to the object passed to handlebars
-    //   $.ajax({
-    //     url: "https://www.dnd5eapi.co/api/spells",
-    //     method: "GET"
+    // $.ajax({
+    //   url: "https://www.dnd5eapi.co/api/spells",
+    //   method: "GET"
     // }).then(spellRes => {
-    //     const spellObj = {
-    //       spells: spellRes.results
-    //     };
-    //     hbsObject = { ...hbsObject, ...spellObj}
-    //   });
+    //   const spellObj = {
+    //     spells: spellRes.results
+    //   };
+    // });
 
     //   //  get monster info from api and add that to hbsObject
     // $.ajax({
@@ -75,7 +108,6 @@ module.exports = function(app) {
     //     hbsObject = { ...hbsObject, ...equipObj}
     //     // then render the index page
     // }).then(
-  
-    });
+  });
   // });
 };
