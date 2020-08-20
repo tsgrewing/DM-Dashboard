@@ -33,7 +33,7 @@ module.exports = function(app) {
   });
 
   app.get("/index", isAuthenticated, (req, res) => {
-    // let hbsObject = {};
+
     // get character info from database
     db.Character.findAll().then(data => {
       // let hbsObject={}
@@ -41,7 +41,6 @@ module.exports = function(app) {
         characters: data
       };
       hbsObject = { ...charObj };
-
       $.ajax({
         url: "https://www.dnd5eapi.co/api/spells",
         method: "GET"
@@ -74,40 +73,6 @@ module.exports = function(app) {
         })
         });
       });
-      
     });
-    //   // then get spell info from dNd api and add it to the object passed to handlebars
-    // $.ajax({
-    //   url: "https://www.dnd5eapi.co/api/spells",
-    //   method: "GET"
-    // }).then(spellRes => {
-    //   const spellObj = {
-    //     spells: spellRes.results
-    //   };
-    // });
-
-    //   //  get monster info from api and add that to hbsObject
-    // $.ajax({
-    //     url: "https://www.dnd5eapi.co/api/monsters",
-    //     method: "GET"
-    // }).then(monsterRes => {
-    //     const monsterObj = {
-    //       monsters: monsterRes
-    //     };
-    //     hbsObject = { ...hbsObject, ...monsterObj}
-    //   });
-    //     // then get equipment info and add that to the hbs onbject
-
-    // $.ajax({
-    //     url: "https://www.dnd5eapi.co/api/equipment",
-    //     method: "GET"
-    // }).then(equipRes => {
-    //     const equipObj = {
-    //       equipment: equipRes.results
-    //     };
-    //     hbsObject = { ...hbsObject, ...equipObj}
-    //     // then render the index page
-    // }).then(
   });
-  // });
 };

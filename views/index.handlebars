@@ -36,7 +36,7 @@
                     <select id="spellSelect" class="form-control">
                         {{#each spells}}
                             {{!-- {{#each results}} --}}
-                            <option class="spellItem" data-index="{{this.url}}">
+                            <option class="spellItem" data-url="{{this.url}}">
                                 {{this.name}}
                             </option>
                         {{!-- {{/each}} --}}
@@ -55,7 +55,7 @@
                     <label for="monsterSelect">Monsters</label>
                     <select id="monsterSelect" class="form-control">
                         {{#each monsters}}
-                            <option class="monsterItem" data-index="{{this.url}}">
+                            <option class="monsterItem" data-url="{{this.url}}">
                                 {{this.name}}
                             </option>
                         {{/each}}
@@ -73,7 +73,7 @@
                     <label for="equipSelect">Equipment</label>
                     <select id="equipSelect" class="form-control">
                         {{#each equipment}}
-                            <option class="equipItem" data-index="{{this.url}}">
+                            <option class="equipItem" data-url="{{this.url}}">
                                 {{this.name}}
                             </option>
                         {{/each}}
