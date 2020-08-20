@@ -39,44 +39,43 @@ module.exports = function(app) {
         characters: data
       };
       hbsObject = { ...charObj };
-    });
-      // then get spell info from dNd api and add it to the object passed to handlebars
-      $.ajax({
-        url: "https://www.dnd5eapi.co/api/spells",
-        method: "GET"
-    }).then(spellRes => {
-      console.log(spellRes);
-        const spellObj = {
-          spells: spellRes.results
-        };
-        hbsObject = { ...hbsObject, ...spellObj}
-        console.log(spellObj)
-      });
-
-      //  get monster info from api and add that to hbsObject
-    $.ajax({
-        url: "https://www.dnd5eapi.co/api/monsters",
-        method: "GET"
-    }).then(monsterRes => {
-        const monsterObj = {
-          monsters: monsterRes
-        };
-        hbsObject = { ...hbsObject, ...monsterObj}
-      });
-        // then get equipment info and add that to the hbs onbject
-
-    $.ajax({
-        url: "https://www.dnd5eapi.co/api/equipment",
-        method: "GET"
-    }).then(equipRes => {
-        const equipObj = {
-          equipment: equipRes.results
-        };
-        hbsObject = { ...hbsObject, ...equipObj}
-    //     // then render the index page
-    // }).then(
       console.log(hbsObject)
       res.render("index", hbsObject)
     });
-  });
+    //   // then get spell info from dNd api and add it to the object passed to handlebars
+    //   $.ajax({
+    //     url: "https://www.dnd5eapi.co/api/spells",
+    //     method: "GET"
+    // }).then(spellRes => {
+    //     const spellObj = {
+    //       spells: spellRes.results
+    //     };
+    //     hbsObject = { ...hbsObject, ...spellObj}
+    //   });
+
+    //   //  get monster info from api and add that to hbsObject
+    // $.ajax({
+    //     url: "https://www.dnd5eapi.co/api/monsters",
+    //     method: "GET"
+    // }).then(monsterRes => {
+    //     const monsterObj = {
+    //       monsters: monsterRes
+    //     };
+    //     hbsObject = { ...hbsObject, ...monsterObj}
+    //   });
+    //     // then get equipment info and add that to the hbs onbject
+
+    // $.ajax({
+    //     url: "https://www.dnd5eapi.co/api/equipment",
+    //     method: "GET"
+    // }).then(equipRes => {
+    //     const equipObj = {
+    //       equipment: equipRes.results
+    //     };
+    //     hbsObject = { ...hbsObject, ...equipObj}
+    //     // then render the index page
+    // }).then(
+  
+    });
+  // });
 };

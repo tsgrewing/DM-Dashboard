@@ -23,7 +23,7 @@
         </div>
         {{!-- div to hold generated map from rot.js(or similar) --}}
         <div class="form-group col-md-6">
-            <button type="button" class="btn btn-dark" id="mapButton">Generate Map</button>
+            <button type="button" class="btn btn-danger" id="mapButton">Generate Map</button>
         </div>
 
         {{!-- div to hold "manuals" drop downs for spells/monsters/equipment --}}
@@ -35,11 +35,11 @@
                     <label for="spellSelect">Spells</label>
                     <select id="spellSelect" class="form-control">
                         {{#each spells}}
-                            {{#each results}}
+                            {{!-- {{#each results}} --}}
                             <option class="spellItem" data-index="{{this.url}}">
                                 {{this.name}}
                             </option>
-                        {{/each}}
+                        {{!-- {{/each}} --}}
                         {{/each}}
                     </select>
                     {{!-- div to be populated by whichever character is selected in dropdown --}}
