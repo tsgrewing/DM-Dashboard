@@ -38,7 +38,9 @@ const generateCharacter = () => {
     con: stats[2],
     int: stats[3],
     wis: stats[4],
-    cha: stats[5]
+    cha: stats[5],
+    level: 1,
+    xp: 0
   };
   createChar(newChar);
 };
@@ -54,9 +56,7 @@ const getStats = array => {
 };
 
 const createChar = Character => {
-  $.post("/api/characters/", Character, () => {
-    app.get("/members", isAuthenticated, (req, res) => {
-      res.render("members");
-    });
+  $.post("/api/characters/", Character).then(() => {
+    window.location.replace("/index");
   });
 };

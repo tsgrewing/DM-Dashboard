@@ -28,6 +28,7 @@ app.set("view engine", "handlebars");
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./controllers/characterController.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
@@ -51,8 +52,7 @@ db.sequelize.sync().then(() => {
 //     layoutsDir: __dirname + "/views/layouts"
 //   })
 // );
-app.use(express.static("public"));
-app.get("/", (req, res) => {
-  //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-  res.render("main", { layout: "index" });
-});
+// app.get("/", (req, res) => {
+//   //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+//   res.render("main", { layout: "index" });
+// });
