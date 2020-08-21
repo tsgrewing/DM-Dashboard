@@ -33,10 +33,8 @@ module.exports = function(app) {
   });
 
   app.get("/index", isAuthenticated, (req, res) => {
-
     // get character info from database
     db.Character.findAll().then(data => {
-      // let hbsObject={}
       const charObj = {
         characters: data
       };
@@ -67,6 +65,8 @@ module.exports = function(app) {
               equipment: equipRes.results
             };
             hbsObject = { ...hbsObject, ...equipObj}
+
+            console.log(hbsObject)
             res.render("index", hbsObject)
         })
         });

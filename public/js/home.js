@@ -9,22 +9,23 @@ $(document).ready(() => {
   const equipDiv = $("#equipDiv");
 
   const updateChar = id => {
-    console.log("/api/characters/" + id);
     $.get("/api/characters/" + id, response => {
       charDiv.html(
         `<tr><th> Name: </th> <td> ${response.name}</td></tr>
         <tr><th> Class: </th> <td> ${response.class}</td></tr>
         <tr><th> Race: </th> <td> ${response.race}</td></tr>
-        <tr><th> Level: </th> <td> ${response.level}</td></tr>
         <tr><th> Alignment: </th> <td> ${response.alignment}</td></tr>
-        <tr><th> HP: </th> <td> ${response.hp}</td></tr>
-        <tr><th> XP: </th> <td> ${response.xp}</td></tr>
+        <tr><th> Level: </th> <td> <input type="text" value="${response.level}"></td></tr>
+        <tr><th> HP: </th> <td> <input type'"text" value="${response.hp}"></td></tr>
+        <tr><th> XP: </th> <td> <input type="text" value="${response.xp}"</td></tr>
         <tr><th> Strength: </th> <td> ${response.str}</td></tr>
         <tr><th> Dexterity: </th> <td> ${response.dex}</td></tr>
         <tr><th> Constitution: </th> <td> ${response.con0}</td></tr>
         <tr><th> Intelligence: </th> <td> ${response.int}</td></tr>
         <tr><th> Wisdom: </th> <td> ${response.wis}</td></tr>
         <tr><th> Charisma: </th> <td> ${response.cha}</td></tr>
+        <td><button type="button" class="btn btn-success">Update</button>
+        <td><button type="button" class="btn btn-danger">Delete</button>
         `
       );
     });
