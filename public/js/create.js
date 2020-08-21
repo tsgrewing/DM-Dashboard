@@ -2,12 +2,12 @@ const charName = $("#charName");
 const charClass = $("#charClass");
 const charRace = $("#charRace");
 const createForm = $(".create-form");
-
+const charAlign = $("#alignment");
 let hitPoints = 0;
 const stats = [15, 14, 13, 12, 10, 8];
 
 // Adding an event listener for when the form is submitted
-$(createForm).on("submit", event => {
+createForm.on("submit", event => {
   event.preventDefault();
 
   const charC = charClass.val();
@@ -32,6 +32,7 @@ const generateCharacter = () => {
     name: charName.val().trim(),
     race: charRace.val(),
     class: charClass.val(),
+    alignment: charAlign.val(),
     hp: hitPoints,
     str: stats[0],
     dex: stats[1],
