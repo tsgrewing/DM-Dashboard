@@ -140,3 +140,11 @@ $(document).ready(() => {
     });
   });
 });
+
+// Draggable Interaction
+$(() => {
+  $(".boxWrapper").draggable({ containment: "body" });
+});
+// $(function() {
+//   $(".boxWrapper").resizable({containment: "body"})
+// });

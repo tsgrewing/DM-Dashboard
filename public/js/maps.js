@@ -67,7 +67,8 @@ $(document).ready(() => {
 //     }
 //   }
 
-// mapForm.on("submit", function() {
+// mapForm.on("submit", function(event) {
+//     event.preventDefault();
 //     const height = parseInt(mapHeight.val());
 //     const width = parseInt(mapWidth.val());
 //     console.log(width)

@@ -9,6 +9,7 @@ body {
   text-align: center;
   font-family: 'Eczar', serif;
   max-height: 100vh;
+  overflow: hidden;
 }
 body, html{
   height: 100%;
@@ -50,14 +51,16 @@ label {
   padding: 10px;
   overflow: auto;
   margin-bottom: 10px;
-  max-height: 43vh;
+  /* max-height: 43vh; */
   opacity: 80%;
+  touch-action: none;
+  user-select: none;
 }
 .overWrapper {
-  max-height: 43vh;
+  /* max-height: 43vh; */
 }
 #charWrapper {
-  max-height: 63vh;
+  /* max-height: 63vh; */
 }
 
 ::-webkit-scrollbar {
