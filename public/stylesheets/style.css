@@ -12,3 +12,8 @@ form.login {
 body, html{
   height: 100%;
 }
+.maps {
+  image: url("https://drive.google.com/file/d/1kDx4vUrc2Nfy3aXwOIYM7zXgySW7OmSq/view?usp=sharing");
+  height: 100%;
+  color: white;
+  text-align: center;
