@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = function(app) {
   app.post("/api/characters", (req, res) => {
     // eslint-disable-next-line prettier/prettier
-    const { name, race, str, dex, con, int, wis, cha, level, xp, hp } = req.body;
+    const { name, race, str, dex, con, int, wis, cha, level, xp, hp, alignment } = req.body;
     db.Character.create({
       name,
       class: req.body.class,
@@ -16,7 +16,8 @@ module.exports = function(app) {
       cha,
       hp,
       xp,
-      level
+      level,
+      alignment
     }).then(dbCharacter => {
       res.json(dbCharacter);
     });
