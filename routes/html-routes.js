@@ -67,8 +67,6 @@ module.exports = function(app) {
               equipment: equipRes.results
             };
             hbsObject = { ...hbsObject, ...equipObj}
-
-            console.log(hbsObject)
             res.render("index", hbsObject)
         })
         });
