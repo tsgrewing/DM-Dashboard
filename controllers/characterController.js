@@ -48,4 +48,14 @@ module.exports = function(app) {
       res.json(dbCharacter);
     });
   });
+
+  app.put("/api/characters", (req, res) => {
+    db.Post.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(dbCharacter => {
+      res.json(dbCharacter);
+    });
+  });
 };

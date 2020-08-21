@@ -83,3 +83,8 @@ label {
 ::-webkit-scrollbar-button {
   background: transparent;
 }
+
+@font-face {
+  font-family: 'MedievalSharp';
+  src: url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+}
