@@ -1,6 +1,6 @@
 <div class="home-intro"></div>
     <div class="row justify-content-around">
-        <div class="col-md-3" id="charDiv">
+        <div class="col-md-3">
             <div class="form-row">
                 <div class="form-group">
                     {{!-- drop down populated with characters from database --}}
@@ -14,6 +14,9 @@
                         {{/dataValues}}
                         {{/each}}
                     </select>
+                    <table id="charDiv">
+
+                    </table>
                     {{!-- div to be populated by whichever character is selected in dropdown --}}
                     <div>
                         {{!-- Will be dynamically populated with javascript on change of the select --}}
@@ -28,9 +31,7 @@
 
         {{!-- div to hold "manuals" drop downs for spells/monsters/equipment --}}
         <div class="col-md-3" id="manualsDiv">
-            {{!-- form/display for spells --}}
-            <div class="form-row">
-                <div class="form-group">
+
                     {{!-- drop down populated with characters from database --}}
                     <label for="spellSelect">Spells</label>
                     <select id="spellSelect" class="form-control">
@@ -43,14 +44,10 @@
                         {{/each}}
                     </select>
                     {{!-- div to be populated by whichever character is selected in dropdown --}}
-                    <div>
+                    <table id="spellDiv">
                         {{!-- Will be dynamically populated with javascript on change of the select --}}
-                    </div>
-                </div>
-            </div>
-            {{!-- form/display for monsters --}}
-            <div class="form-row">
-                <div class="form-group">
+                    </table>
+
                     {{!-- drop down populated with characters from database --}}
                     <label for="monsterSelect">Monsters</label>
                     <select id="monsterSelect" class="form-control">
@@ -61,14 +58,9 @@
                         {{/each}}
                     </select>
                     {{!-- div to be populated by whichever character is selected in dropdown --}}
-                    <div>
+                    <table id="monsterDiv">
                         {{!-- Will be dynamically populated with javascript on change of the select --}}
-                    </div>
-                </div>
-            </div>
-            {{!-- form/display for equipment --}}
-            <div class="form-row">
-                <div class="form-group">
+                    </table>
                     {{!-- drop down populated with characters from database --}}
                     <label for="equipSelect">Equipment</label>
                     <select id="equipSelect" class="form-control">
@@ -79,15 +71,14 @@
                         {{/each}}
                     </select>
                     {{!-- div to be populated by whichever character is selected in dropdown --}}
-                    <div>
+                    <table id="equipDiv">
                         {{!-- Will be dynamically populated with javascript on change of the select --}}
-                    </div>
-                </div>
-            </div>
+                    </table>
         </div>
     </div>
     {{!-- Div to hold dice rolling interface --}}
     <div class="row container justify-content-around">
         
     </div>
-                
+
+             
