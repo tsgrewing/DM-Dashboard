@@ -51,6 +51,7 @@ label {
   overflow: auto;
   margin-bottom: 10px;
   max-height: 43vh;
+  opacity: 80%;
 }
 .overWrapper {
   max-height: 43vh;
