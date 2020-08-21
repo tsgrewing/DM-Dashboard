@@ -1,57 +1,59 @@
-<h2>Add a Character</h2>
-    <form class="create-form">
-        <div class="form-row">
-            <div class="form-group col-md-3">
-            <label for="charName">Character Name:</label>
-            <input type="text" class="form-control" id="charName">
+<div class="container boxWrapper">
+    <h2>Add a Character</h2>
+        <form class="create-form">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                <label for="charName">Character Name:</label>
+                <input type="text" class="form-control" id="charName">
+                </div>
+                <div class="form-group col-md-3">
+                <label for="charRace">Race</label>
+                    <select id="charRace" class="form-control">
+                        <option>Dragonborn</option>
+                        <option>Dwarf</option>
+                        <option>Elf</option>
+                        <option>Gnome</option>
+                        <option>Half-Elf</option>
+                        <option>Half-Orc</option>
+                        <option>Halfling</option>
+                        <option selected>Human</option>
+                        <option>Tiefling</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                <label for="charClass">Class</label>
+                    <select id="charClass" class="form-control">
+                        <option>Barbarian</option>
+                        <option>Bard</option>
+                        <option>Cleric</option>
+                        <option>Druid</option>
+                        <option selected>Fighter</option>
+                        <option>Monk</option>
+                        <option>Paladin</option>
+                        <option>Ranger</option>
+                        <option>Rogue</option>
+                        <option>Sorcerer</option>
+                        <option>Warlock</option>
+                        <option>Wizard</option>
+                    </select>            
+                </div>
+                <div class="form-group col-md-3">
+                <label for="alignment">Alignment</label>
+                    <select id="alignment" class="form-control">
+                        <option>Lawful Good</option>
+                        <option>Lawful Neutral</option>
+                        <option>Lawful Evil</option>
+                        <option>Chaotic Good</option>
+                        <option>Chaotic Neutral</option>
+                        <option>Chaotic Evil</option>
+                        <option>Neutral Good</option>
+                        <option selected>True Neutral</option>
+                        <option>Neutral Evil</option>
+                    </select>
+                </div>
+                <a href="/index"><button type="submit" class="btn btn-danger">Submit</button></a>
             </div>
-            <div class="form-group col-md-3">
-            <label for="charRace">Race</label>
-                <select id="charRace" class="form-control">
-                    <option>Dragonborn</option>
-                    <option>Dwarf</option>
-                    <option>Elf</option>
-                    <option>Gnome</option>
-                    <option>Half-Elf</option>
-                    <option>Half-Orc</option>
-                    <option>Halfling</option>
-                    <option selected>Human</option>
-                    <option>Tiefling</option>
-                </select>
-            </div>
-            <div class="form-group col-md-3">
-            <label for="charClass">Class</label>
-                <select id="charClass" class="form-control">
-                    <option>Barbarian</option>
-                    <option>Bard</option>
-                    <option>Cleric</option>
-                    <option>Druid</option>
-                    <option selected>Fighter</option>
-                    <option>Monk</option>
-                    <option>Paladin</option>
-                    <option>Ranger</option>
-                    <option>Rogue</option>
-                    <option>Sorcerer</option>
-                    <option>Warlock</option>
-                    <option>Wizard</option>
-                </select>            
-            </div>
-            <div class="form-group col-md-3">
-            <label for="alignment">Alignment</label>
-                <select id="alignment" class="form-control">
-                    <option>Lawful Good</option>
-                    <option>Lawful Neutral</option>
-                    <option>Lawful Evil</option>
-                    <option>Chaotic Good</option>
-                    <option>Chaotic Neutral</option>
-                    <option>Chaotic Evil</option>
-                    <option>Neutral Good</option>
-                    <option selected>True Neutral</option>
-                    <option>Neutral Evil</option>
-                </select>
-            </div>
-            <a href="/index"><button type="submit" class="btn btn-danger">Submit</button></a>
-        </div>
-    </form>
+        </form>
 
-  <script type="text/javascript" src="js/create.js"></script>
+    <script type="text/javascript" src="js/create.js"></script>
+</div>
