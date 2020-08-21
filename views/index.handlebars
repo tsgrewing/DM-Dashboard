@@ -1,7 +1,6 @@
     <div class="row justify-content-around">
         <div class="col-md-3">
-            <div class="form-row">
-                <div class="form-group">
+                <div class="boxWrapper" id="charWrapper">
                     {{!-- drop down populated with characters from database --}}
                     <label for="charSelect">Available Characters</label>
                     <select name="charSelect" id="charSelect" class="form-control">
@@ -21,23 +20,38 @@
                         {{!-- Will be dynamically populated with javascript on change of the select --}}
                     </div>
                 </div>
-            </div>
+                <div class="boxWrapper" id="equipWrapper">
+                    {{!-- drop down populated with characters from database --}}
+                    <label for="equipSelect">Equipment</label>
+                    <select id="equipSelect" class="form-control">
+                        {{#each equipment}}
+                            <option class="equipItem" data-url="{{this.url}}">
+                                {{this.name}}
+                            </option>
+                        {{/each}}
+                    </select>
+                    {{!-- div to be populated by whichever character is selected in dropdown --}}
+                    <table id="equipDiv">
+                        {{!-- Will be dynamically populated with javascript on change of the select --}}
+                    </table>
+                </div>
         </div>
         {{!-- div to hold generated map from rot.js(or similar) --}}
         <div>
-        <div class="form-group col-md-6">
-       <script>function showImage(){
-        document.getElementById('loadingImage').style.visibility="visible";
-        }</script>
+        <div class="form-group col-md-5" id="mapWrapper">
+       {{!-- <script>function showImage(){ --}}
+        {{!-- document.getElementById('loadingImage').style.visibility="visible"; --}}
+        {{!-- }</script>
             <input type="button" class="btn btn-danger" value="Generate Map" onclick="showImage();"/>
-            <img id="loadingImage" src="images/download.png" style="visibility:hidden"/>
+            <img id="loadingImage" src="images/download.png" style="visibility:hidden"/> --}}
                         
 
         </div>
 
         {{!-- div to hold "manuals" drop downs for spells/monsters/equipment --}}
         <div class="col-md-3" id="manualsDiv">
-
+            <div>
+                <div class="boxWrapper" id="spellWrapper">
                     {{!-- drop down populated with characters from database --}}
                     <label for="spellSelect">Spells</label>
                     <select id="spellSelect" class="form-control">
@@ -53,7 +67,10 @@
                     <table id="spellDiv">
                         {{!-- Will be dynamically populated with javascript on change of the select --}}
                     </table>
-
+                </div>
+            </div>
+            <div>
+                <div class="boxWrapper" id="monsterWrapper">
                     {{!-- drop down populated with characters from database --}}
                     <label for="monsterSelect">Monsters</label>
                     <select id="monsterSelect" class="form-control">
@@ -67,19 +84,8 @@
                     <table id="monsterDiv">
                         {{!-- Will be dynamically populated with javascript on change of the select --}}
                     </table>
-                    {{!-- drop down populated with characters from database --}}
-                    <label for="equipSelect">Equipment</label>
-                    <select id="equipSelect" class="form-control">
-                        {{#each equipment}}
-                            <option class="equipItem" data-url="{{this.url}}">
-                                {{this.name}}
-                            </option>
-                        {{/each}}
-                    </select>
-                    {{!-- div to be populated by whichever character is selected in dropdown --}}
-                    <table id="equipDiv">
-                        {{!-- Will be dynamically populated with javascript on change of the select --}}
-                    </table>
+                </div>
+            </div>
         </div>
     </div>
     {{!-- Div to hold dice rolling interface --}}

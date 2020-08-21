@@ -89,7 +89,6 @@ $(document).ready(() => {
     const charId = $(this)
       .find("option:selected")
       .data("id");
-    console.log(charId);
     updateChar(charId);
   });
 
@@ -98,7 +97,6 @@ $(document).ready(() => {
     const spellUrl = $(this)
       .find("option:selected")
       .data("url");
-    console.log(spellUrl);
     updateSpell(spellUrl);
   });
 

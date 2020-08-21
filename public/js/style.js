@@ -6,10 +6,7 @@ function randomImage() {
   ];
   const size = images.length;
   const x = Math.floor(size * Math.random());
-  console.log(x);
-  const element = document.getElementsByClassName("home-intro");
-  console.log(element);
-  element[0].style["background-image"] = "url(" + images[x] + ")";
+  $("body").css("background-image", "url(" + images[x] + ")");
 }
 
 document.addEventListener("DOMContentLoaded", randomImage);
