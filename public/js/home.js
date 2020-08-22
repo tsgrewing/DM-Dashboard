@@ -25,10 +25,9 @@ $(document).ready(() => {
         <tr><th> Constitution: </th> <td> ${response.con}</td></tr>
         <tr><th> Intelligence: </th> <td> ${response.int}</td></tr>
         <tr><th> Wisdom: </th> <td> ${response.wis}</td></tr>
-        <tr><th> Charisma: </th> <td> ${response.cha}</td></tr>
-        <td><button type="button" class="btn btn-success" id="charUpdate" data-id="${response.id}">Update</button>
-        <td><button type="button" class="btn btn-danger" id="charDelete" data-id="${response.id}">Delete</button>
-        `
+        <tr><th> Charisma: </th> <td> ${response.cha}</td></tr>`
+        // <td><button type="button" class="btn btn-success" id="charUpdate" data-id="${response.id}">Update</button>
+        // <td><button type="button" class="btn btn-danger" id="charDelete" data-id="${response.id}">Delete</button>
       );
     });
   };
