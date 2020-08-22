@@ -13,15 +13,15 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      return res.render("createCharacter");
+      return renderIndex(res);
     }
-    res.render("signup");
+    res.render("login");
   });
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the character create page
     if (req.user) {
-      return res.render("createCharacter");
+      return renderIndex(res);
     }
     res.render("login");
   });
@@ -33,7 +33,11 @@ module.exports = function(app) {
   });
 
   app.get("/index", isAuthenticated, (req, res) => {
-    // get character info from database
+    renderIndex(res);
+  });
+
+  const renderIndex = (res) => {
+        // get character info from database
     db.Character.findAll().then(data => {
       const charObj = {
         characters: data
@@ -70,5 +74,7 @@ module.exports = function(app) {
         });
       });
     });
-  });
+  }
+
 };
+

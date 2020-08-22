@@ -145,6 +145,10 @@ $(document).ready(() => {
 $(() => {
   $(".boxWrapper").draggable({ containment: "body" });
 });
+
+$(() => {
+  $(".resizable").resizable();
+});
 // $(function() {
 //   $(".boxWrapper").resizable({containment: "body"})
 // });
