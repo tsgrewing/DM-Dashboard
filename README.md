@@ -1,60 +1,58 @@
-# Project 2
+# Chummy Cats Project 2: Dungeons and Dragons Helper App
+  
+  [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)]()
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  
+  ### Description
 
-## Application Requirements
+    An app that allows players to engage in a match of Dungeons and Dragon. You can create a character with classification of the characters race, class, and alignment. This App also lets you view different types of equipment, cast spells, look up knowledge of different DND monsters and generate maps to play on. 
 
-* Must use a Node and Express server
+  ### Table of Contents
 
-* Must use Handlebars.js as the template engine
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Tech-Used](#Tech-Used)
+  * [License](#license)
+  * [Repository](#Repository)
+  * [Questions](#questions)
 
-* Must be backed by a MySQL database with a Sequelize ORM
+  ### Installation
 
-* Must utilize both GET and POST routes for retrieving and adding new data
+    Clone this repository into your local storage. Once this is complete, please follow these steps;
 
-* Must be deployed using Heroku (with data)
+    1)Create a mysql db called "dandd_db" 2)Open terminal in current repo and run "npm i" to install all node packages 3)While in terminal, run "node server.js" and you will successfully connect to server 4)Open browser and put "http://localhost:8080" in search bar 5)Enjoy using the app!
 
-* Must utilize at least one new library, package, or technology that we haven’t discussed
+  ### Usage
 
-* Must have a polished front end/UI
+    Sign in or creat new account. Create a characther. Chose desired attributes for the characther. Onces on the dashboard generate map for match to be played on and enjoy.
 
-* Must have a folder structure that meets the MVC paradigm
+    Deployed on Heroku.
 
-* Must meet good quality coding standards (indentation, scoping, naming)
+  ### App Screen Shots
 
-* Must protect API keys in Node with environment variables
+  ![Photo](./images/DND-Helper1.PNG)   
+  ![Photo](./images/DND-Helper2.PNG)
+  ![Photo](./images/DND-Helper3.PNG)
 
+  ### Tech Used
 
-## Presentation Requirements
+    "@handlebars/allow-prototype-access": "^1.0.3", "ajax": "0.0.4", "bcryptjs": "2.4.3","express": "^4.17.1","express-handlebars": "^5.1.0","express-session": "^1.16.1","jquery": "^3.5.1","jsdom": "^16.4.0","mysql2": "^1.6.5","passport": "^0.4.0","passport-local": "^1.0.0","rot-js": "^2.1.4","sequelize": "^5.8.6“"chai": "^4.1.2","chai-http": "^4.0.0","cross-env": "^5.2.0","eslint": "^4.19.1","eslint-config-prettier": "^2.9.0","eslint-plugin-prettier": "^2.6.2","mocha": "^5.2.0","prettier": "^1.13.7"
 
-Use this [project presentation template](https://docs.google.com/presentation/d/1_u8TKy5zW5UlrVQVnyDEZ0unGI2tjQPDEpA0FNuBKAw/edit?usp=sharing) to address the following: 
+  ### License
 
-* Elevator pitch: a one minute description of your application
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-* Concept: What is your user story? What was your motivation for development?
+  ### Repository
 
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
+  - [Github](https://github.com/tsgrewing/project-2)
+  - [Heroku](https://blooming-ridge-74846.herokuapp.com/)
 
-* Demo: Show your stuff!
+  ### Questions
 
-* Directions for Future Development
+  If you have any additional questions you may contact us at:
 
-* Links to to the deployed application and the GitHub repository
+   * https://github.com/tsgrewing
+   * https://github.com/EMackPierre
+   * https://github.com/BillyJHicksJr
 
-
-## Grading Metrics 
-
-| Metric        | Weight | 
-| ---           | ---    |
-| Concept       | 10%    |
-| Design        | 20%    |
-| Functionality | 30%    |
-| Collaboration | 30%    |
-| Presentation  | 10%    |
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
+  
