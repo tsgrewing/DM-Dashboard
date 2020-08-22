@@ -118,28 +118,28 @@ $(document).ready(() => {
     updateEquipment(equipUrl);
   });
 
-  charDelete.on("click", function() {
-    console.log("deleting...");
-    $.delete("/api/characters/" + $(this).data("id"), response => {
-      console.log(`${response.name} has been deleted`);
-    });
-  });
+//   $("#charDiv").on("click", "#charDelete", function() {
+//     console.log("deleting...");
+//     $.ajax("/api/characters/" + $(this).data("id"), response => {
+//       console.log(`${response.name} has been deleted`);
+//     });
+//   });
 
-  charUpdate.on("click", function() {
-    const data = {
-      id: $(this).data("id"),
-      level: parseInt($("#lvlInput").val),
-      hp: parseInt($("#hpInput").val),
-      xp: parseInt($("#xpInput").val)
-    };
-    console.log(data);
-    $.ajax({
-      method: "PUT",
-      url: "/api/characters",
-      data: data
-    });
-  });
-});
+//   $("#charDiv").on("click", "#charUpdate", function() {
+//     const data = {
+//       id: $(this).data("id"),
+//       level: parseInt($("#lvlInput").val()),
+//       hp: parseInt($("#hpInput").val()),
+//       xp: parseInt($("#xpInput").val())
+//     };
+//     console.log(data);
+//     $.ajax({
+//       method: "PUT",
+//       url: "/api/characters",
+//       data: data
+//     });
+//   });
+// });
 
 // Draggable Interaction
 $(() => {
