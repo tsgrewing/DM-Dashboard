@@ -18,12 +18,14 @@ module.exports = function(app) {
     res.render("login");
   });
 
-  app.get("/login", (req, res) => {
+  
+
+  app.get("/signup", (req, res) => {
     // If the user already has an account send them to the character create page
     if (req.user) {
       return renderIndex(res);
     }
-    res.render("login");
+    res.render("signup");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
