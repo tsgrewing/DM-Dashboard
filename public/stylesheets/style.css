@@ -57,17 +57,8 @@ label {
   user-select: none;
 }
 
-.diceWrapper {
-  border: 2px solid black;
-  border-radius: 25px 5px;
-  background-color: beige;
-  padding: 10px;
-  overflow: auto;
-  margin-bottom: 10px;
-  max-height: 10vh;
-  opacity: 80%;
-  touch-action: none;
-  user-select: none;
+#diceWrapper {
+  max-height: 15vh;
 }
 
 /* .resizable {
@@ -83,7 +74,7 @@ label {
 } */
 
 #mapWrapper {
-  max-height: 85vh;
+  max-height: 80vh;
 }
 
 .formWrapper {

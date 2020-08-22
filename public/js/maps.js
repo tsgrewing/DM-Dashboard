@@ -13,7 +13,7 @@ const mapDiv = $("#mapDiv");
 //     ctx.fillText("Generate A Map",mapCanvas.width/2, mapCanvas.height/2);
 // });
 
-mapBtn.click(event => {
+mapBtn.click(() => {
   // event.preventDefault();
   // ctx.clearRect(0,0, mapCanvas.width, mapCanvas.height)
   console.log("Mapping");
