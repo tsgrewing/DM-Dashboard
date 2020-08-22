@@ -94,6 +94,11 @@ label {
   max-height: 63vh;
 }
 
+#diceRoller label {
+  font-size: large;
+  font-weight: bolder;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

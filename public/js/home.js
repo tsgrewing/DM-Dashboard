@@ -7,8 +7,8 @@ $(document).ready(() => {
   const spellDiv = $("#spellDiv");
   const monsterDiv = $("#monsterDiv");
   const equipDiv = $("#equipDiv");
-  const charDelete = $("#charDelete");
-  const charUpdate = $("#charUpdate");
+  // const charDelete = $("#charDelete");
+  // const charUpdate = $("#charUpdate");
 
   const updateChar = id => {
     $.get("/api/characters/" + id, response => {
@@ -118,37 +118,38 @@ $(document).ready(() => {
     updateEquipment(equipUrl);
   });
 
-//   $("#charDiv").on("click", "#charDelete", function() {
-//     console.log("deleting...");
-//     $.ajax("/api/characters/" + $(this).data("id"), response => {
-//       console.log(`${response.name} has been deleted`);
-//     });
-//   });
+  //   $("#charDiv").on("click", "#charDelete", function() {
+  //     console.log("deleting...");
+  //     $.ajax("/api/characters/" + $(this).data("id"), response => {
+  //       console.log(`${response.name} has been deleted`);
+  //     });
+  //   });
 
-//   $("#charDiv").on("click", "#charUpdate", function() {
-//     const data = {
-//       id: $(this).data("id"),
-//       level: parseInt($("#lvlInput").val()),
-//       hp: parseInt($("#hpInput").val()),
-//       xp: parseInt($("#xpInput").val())
-//     };
-//     console.log(data);
-//     $.ajax({
-//       method: "PUT",
-//       url: "/api/characters",
-//       data: data
-//     });
-//   });
-// });
+  //   $("#charDiv").on("click", "#charUpdate", function() {
+  //     const data = {
+  //       id: $(this).data("id"),
+  //       level: parseInt($("#lvlInput").val()),
+  //       hp: parseInt($("#hpInput").val()),
+  //       xp: parseInt($("#xpInput").val())
+  //     };
+  //     console.log(data);
+  //     $.ajax({
+  //       method: "PUT",
+  //       url: "/api/characters",
+  //       data: data
+  //     });
+  //   });
+  // });
 
-// Draggable Interaction
-$(() => {
-  $(".boxWrapper").draggable({ containment: "body" });
+  // Draggable Interaction
+  $(() => {
+    $(".boxWrapper").draggable({ containment: "body" });
+  });
+
+  $(() => {
+    $(".resizable").resizable();
+  });
+  // $(function() {
+  //   $(".boxWrapper").resizable({containment: "body"})
+  // });
 });
-
-$(() => {
-  $(".resizable").resizable();
-});
-// $(function() {
-//   $(".boxWrapper").resizable({containment: "body"})
-// });
