@@ -63,7 +63,11 @@ label {
 
 .rollPane {
   max-width: 7rem; 
+}
 
+.totalRoll {
+  font-weight: bolder;
+  font-size: larger;
 }
 
 /* .resizable {

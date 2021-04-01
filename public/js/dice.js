@@ -63,30 +63,42 @@
 
 // Temporary dice rolling functionality
 
-function rollDice(num, sides) {
+function rollDice(num, sides, modifier) {
   // $("#resultDiv").html(num + Math.floor(Math.random() * (sides * num - num + 1)))
   const rollResult = [];
-  let total = 0;
+  let total = modifier;
   for (i = 0; i < num; i++) {
     const roll = Math.floor(Math.random() * sides) + 1;
     rollResult.push(roll);
     total = total + roll;
   }
-  if (num === 1) {
-    $("#resultDiv").html(`You rolled ${total}`);
+  if (num === 1 && rollResult[0] === 20) {
+    $("#resultDiv").html(
+      // eslint-disable-next-line quotes
+      `<span class="totalRoll"><i class="fab fa-critical-role"></i>NATURAL 20!<i class="fab fa-critical-role"></i></span>`
+    );
+  } else if (num === 1) {
+    $("#resultDiv").html(
+      `You rolled a <span class="totalRoll">${rollResult}</span> / Total with modifier: <span class="totalRoll">${total}</span>`
+    );
   } else {
-    $("#resultDiv").html(`You rolled ${rollResult} for a total of ${total}`);
+    const allDice = rollResult.join(" / ");
+    $("#resultDiv").html(
+      `You rolled <span class="totalRoll">${allDice}</span> for a total of <span class="totalRoll">${total}</span>`
+    );
   }
 }
 
 $("#rollBtn").on("click", event => {
   console.log("hello");
   event.preventDefault();
+  const modifier = parseInt($("#modifier").val());
   const dice = parseInt($("#numSelect").val());
   const type = $("#dieSelect")
     .find("option:selected")
     .data("sides");
   console.log(dice);
+  console.log(modifier);
   console.log(type);
-  rollDice(dice, type);
+  rollDice(dice, type, modifier);
 });
