@@ -57,8 +57,13 @@ label {
   user-select: none;
 }
 
-#diceWrapper {
+/* #diceWrapper {
   max-height: 15vh;
+} */
+
+.rollPane {
+  max-width: 7rem; 
+
 }
 
 /* .resizable {
