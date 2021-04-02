@@ -25,7 +25,7 @@ Clone this repository into your local storage. Once this is complete, please fol
 
   ## Usage
   
- Sign in or create a new accout. From there you can create a character, or use the dashboard to look up spells, monsters, weapons, etc. There is also a dice roller that allows for the common sizes of dice. 
+ Sign in or create a new accout. From there you can create a character, or use the dashboard to look up spells, monsters, weapons, etc. There is also a dice roller that allows for the common sizes of dice. Each pane is moveable, so you can rearrange your dashboard so it works with your workflow.
 
   ## App Screen Shots
 
