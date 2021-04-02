@@ -70,6 +70,11 @@ label {
   font-size: larger;
 }
 
+.fa-critical-role, .fa-exclamation {
+  font-size: 60px;
+  vertical-align: middle;
+}
+
 /* .resizable {
   border: 2px solid black;
   border-radius: 25px 5px;

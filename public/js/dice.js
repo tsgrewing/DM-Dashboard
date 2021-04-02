@@ -75,7 +75,12 @@ function rollDice(num, sides, modifier) {
   if (num === 1 && rollResult[0] === 20) {
     $("#resultDiv").html(
       // eslint-disable-next-line quotes
-      `<span class="totalRoll"><i class="fab fa-critical-role"></i>NATURAL 20!<i class="fab fa-critical-role"></i></span>`
+      `<i class="fab fa-critical-role"></i><span class="totalRoll">NATURAL 20</span><i class="fab fa-critical-role"></i>`
+    );
+  } else if (num === 1 && rollResult[0] === 1) {
+    $("#resultDiv").html(
+      // eslint-disable-next-line quotes
+      `<i class="fas fa-exclamation"></i><span class="totalRoll">NATURAL 1</span><i class="fas fa-exclamation"></i>`
     );
   } else if (num === 1) {
     $("#resultDiv").html(
