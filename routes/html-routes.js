@@ -7,7 +7,7 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { JSDOM } = require("jsdom");
 const { window } = new JSDOM("");
 const $ = require("jquery")(window);
-let hbsObject={}
+let hbsObject = {};
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -44,8 +44,8 @@ module.exports = function(app) {
     renderIndex(res);
   });
 
-  const renderIndex = (res) => {
-        // get character info from database
+  const renderIndex = res => {
+    // get character info from database
     db.Character.findAll().then(data => {
       const charObj = {
         characters: data
@@ -58,31 +58,29 @@ module.exports = function(app) {
         const spellObj = {
           spells: spellRes.results
         };
-        hbsObject = { ...hbsObject, ...spellObj}
+        hbsObject = { ...hbsObject, ...spellObj };
 
         $.ajax({
           url: "https://www.dnd5eapi.co/api/monsters",
           method: "GET"
-      }).then(monsterRes => {
+        }).then(monsterRes => {
           const monsterObj = {
             monsters: monsterRes.results
           };
-          hbsObject = { ...hbsObject, ...monsterObj}
+          hbsObject = { ...hbsObject, ...monsterObj };
 
           $.ajax({
             url: "https://www.dnd5eapi.co/api/equipment",
             method: "GET"
-        }).then(equipRes => {
+          }).then(equipRes => {
             const equipObj = {
               equipment: equipRes.results
             };
-            hbsObject = { ...hbsObject, ...equipObj}
-            res.render("index", hbsObject)
-        })
+            hbsObject = { ...hbsObject, ...equipObj };
+            res.render("index", hbsObject);
+          });
         });
       });
     });
-  }
-
+  };
 };
-
