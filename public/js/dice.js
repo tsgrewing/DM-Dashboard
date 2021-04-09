@@ -95,15 +95,11 @@ function rollDice(num, sides, modifier) {
 }
 
 $("#rollBtn").on("click", event => {
-  console.log("hello");
   event.preventDefault();
   const modifier = parseInt($("#modifier").val());
   const dice = parseInt($("#numSelect").val());
   const type = $("#dieSelect")
     .find("option:selected")
     .data("sides");
-  console.log(dice);
-  console.log(modifier);
-  console.log(type);
   rollDice(dice, type, modifier);
 });

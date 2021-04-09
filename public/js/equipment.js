@@ -7,6 +7,7 @@ const updateEquipment = url => {
     url: `https://www.dnd5eapi.co${url}`,
     method: "GET"
   }).then(res => {
+    console.log(res);
     // determine what type of equipment it is and display info accordingly
     switch (res.equipment_category.index) {
       case "adventuring-gear":
