@@ -83,7 +83,7 @@ module.exports = function(app) {
               method: "GET"
             }).then(magicRes => {
               const magicObj = {
-                equipment: magicObj.results
+                magic: magicRes.results
               };
               hbsObject = { ...hbsObject, ...magicObj };
               res.render("index", hbsObject);
