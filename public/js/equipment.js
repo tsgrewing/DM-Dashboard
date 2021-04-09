@@ -39,7 +39,7 @@ const updateEquipment = url => {
         break;
       case "armor":
         equipDiv.append(`
-        
+          <tr><th>  </th><td>  </td></tr>
         `);
         break;
       case "mounts-and-vehicles":
@@ -60,6 +60,9 @@ const updateEquipment = url => {
         }
         break;
       case "weapon":
+        equipDiv.append(`
+          <tr><th>  </th><td>  </td></tr>
+        `);
         break;
       default:
         equipDiv.html(
