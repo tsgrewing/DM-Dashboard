@@ -24,7 +24,7 @@ const updateEquipment = url => {
       `
       );
     }
-    // determine what type of equipment it is and display info accordingly
+    // determine what type of equipment it is and append info accordingly
     switch (res.equipment_category.index) {
       case "adventuring-gear":
         if (res.gear_category.index === "equipment-packs") {
@@ -42,65 +42,24 @@ const updateEquipment = url => {
         
         `);
         break;
-      case "equipment-packs":
-        break;
-      case "gaming-sets":
-        break;
-      case "heavy-armor":
-        break;
-      case "holy-symbols":
-        break;
-      case "kits":
-        break;
-      case "land-vehicles":
-        break;
-      case "light-armor":
-        break;
-      case "matrial-melee-weapons":
-        break;
-      case "martial-ranged-weapons":
-        break;
-      case "medium-armor":
-        break;
-      case "mounts-and-other-animals":
-        break;
       case "mounts-and-vehicles":
-        break;
-      case "musical-intstruments":
-        break;
-      case "other-tools":
-        break;
-      case "potion":
-        break;
-      case "ring":
-        break;
-      case "rod":
-        break;
-      case "scroll":
-        break;
-      case "shields":
-        break;
-      case "simple-melee-weapons":
-        break;
-      case "simple-ranged-weapons":
-        break;
-      case "simple-weapons":
-        break;
-      case "staff":
-        break;
-      case "standard-gear":
-        break;
-      case "tack-harness-and-drawn-vehicles":
-        break;
-      case "tools":
-        break;
-      case "wand":
-        break;
-      case "waterborne-vehicles":
+        switch (res.vehicle_category) {
+          case "Mounts and Other Animals":
+            equipDiv.append(`
+            <tr><th> Speed: </th><td> ${res.speed} </td></tr>
+            <tr><th> Capacity: </th><td> ${res.capacity} </td></tr>
+            `);
+            break;
+          case "Waterborne Vehicles":
+            equipDiv.append(
+              `<tr><th> Speed: </th><td> ${res.speed} </td></tr>`
+            );
+            break;
+          default:
+            break;
+        }
         break;
       case "weapon":
-        break;
-      case "wondrous-items":
         break;
       default:
         equipDiv.html(
