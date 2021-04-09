@@ -1,6 +1,6 @@
 /* eslint-disable indent */
-// const equipSelect = $("#equipSelect");
-// const $("#equipDiv") = $("#$("#equipDiv")");
+const equipSelect = $("#equipSelect");
+const equipDiv = $("equipDiv");
 
 const updateEquipment = url => {
   $.ajax({
@@ -12,15 +12,22 @@ const updateEquipment = url => {
     switch (res.equipment_category.index) {
       case "adventuring-gear":
         if (res.desc) {
-          $("#equipDiv").html(
+          equipDiv.html(
             `<tr><th> Category: </th> <td> ${res.equipment_category.name}
                 <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
                 <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
                 <tr><th> Description: </th> <td> ${res.desc} </td></tr>
                 `
           );
+        } else if (res.gear_category === "ammunition") {
+          equipDiv.html(
+            `<tr><th> Category: </th> <td> ${res.gear_category.name}
+          <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
+          <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
+          `
+          );
         } else {
-          $("#equipDiv").html(
+          equipDiv.html(
             `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -29,7 +36,7 @@ const updateEquipment = url => {
         }
         break;
       case "ammunition":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -37,7 +44,7 @@ const updateEquipment = url => {
         );
         break;
       case "arcane-foci":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -45,7 +52,7 @@ const updateEquipment = url => {
         );
         break;
       case "armor":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -53,7 +60,7 @@ const updateEquipment = url => {
         );
         break;
       case "artisans-tools":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -61,7 +68,7 @@ const updateEquipment = url => {
         );
         break;
       case "druidic-foci":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -69,7 +76,7 @@ const updateEquipment = url => {
         );
         break;
       case "equipment-packs":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -77,7 +84,7 @@ const updateEquipment = url => {
         );
         break;
       case "gaming-sets":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -85,7 +92,7 @@ const updateEquipment = url => {
         );
         break;
       case "heavy-armor":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -93,7 +100,7 @@ const updateEquipment = url => {
         );
         break;
       case "holy-symbols":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -101,7 +108,7 @@ const updateEquipment = url => {
         );
         break;
       case "kits":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -109,7 +116,7 @@ const updateEquipment = url => {
         );
         break;
       case "land-vehicles":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -117,7 +124,7 @@ const updateEquipment = url => {
         );
         break;
       case "light-armor":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -125,7 +132,7 @@ const updateEquipment = url => {
         );
         break;
       case "matrial-melee-weapons":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -133,7 +140,7 @@ const updateEquipment = url => {
         );
         break;
       case "martial-ranged-weapons":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -141,7 +148,7 @@ const updateEquipment = url => {
         );
         break;
       case "medium-armor":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -149,7 +156,7 @@ const updateEquipment = url => {
         );
         break;
       case "mounts-and-other-animals":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -157,7 +164,7 @@ const updateEquipment = url => {
         );
         break;
       case "mounts-and-vehicles":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -165,7 +172,7 @@ const updateEquipment = url => {
         );
         break;
       case "musical-intstruments":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -173,7 +180,7 @@ const updateEquipment = url => {
         );
         break;
       case "other-tools":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -181,7 +188,7 @@ const updateEquipment = url => {
         );
         break;
       case "potion":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -189,7 +196,7 @@ const updateEquipment = url => {
         );
         break;
       case "ring":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -197,7 +204,7 @@ const updateEquipment = url => {
         );
         break;
       case "rod":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -205,7 +212,7 @@ const updateEquipment = url => {
         );
         break;
       case "scroll":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -213,7 +220,7 @@ const updateEquipment = url => {
         );
         break;
       case "shields":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -221,7 +228,7 @@ const updateEquipment = url => {
         );
         break;
       case "simple-melee-weapons":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -229,7 +236,7 @@ const updateEquipment = url => {
         );
         break;
       case "simple-ranged-weapons":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -237,7 +244,7 @@ const updateEquipment = url => {
         );
         break;
       case "simple-weapons":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -245,7 +252,7 @@ const updateEquipment = url => {
         );
         break;
       case "staff":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -253,7 +260,7 @@ const updateEquipment = url => {
         );
         break;
       case "standard-gear":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -261,7 +268,7 @@ const updateEquipment = url => {
         );
         break;
       case "tack-harness-and-drawn-vehicles":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -269,7 +276,7 @@ const updateEquipment = url => {
         );
         break;
       case "tools":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -277,7 +284,7 @@ const updateEquipment = url => {
         );
         break;
       case "wand":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -285,7 +292,7 @@ const updateEquipment = url => {
         );
         break;
       case "waterborne-vehicles":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -293,7 +300,7 @@ const updateEquipment = url => {
         );
         break;
       case "weapon":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -301,7 +308,7 @@ const updateEquipment = url => {
         );
         break;
       case "wondrous-items":
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Category: </th> <td> ${res.equipment_category.name}
           <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
@@ -309,7 +316,7 @@ const updateEquipment = url => {
         );
         break;
       default:
-        $("#equipDiv").html(
+        equipDiv.html(
           `<tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
           <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
           `
@@ -319,8 +326,8 @@ const updateEquipment = url => {
   });
 };
 
-$("#equipSelect").on("change", function() {
-  $("#equipDiv").empty();
+equipSelect.on("change", function() {
+  equipDiv.empty();
   const equipUrl = $(this)
     .children("option:selected")
     .data("url");
