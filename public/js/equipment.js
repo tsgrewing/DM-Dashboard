@@ -60,9 +60,21 @@ const updateEquipment = url => {
         }
         break;
       case "weapon":
-        equipDiv.append(`
-          <tr><th>  </th><td>  </td></tr>
+        if (res.weapon_range === "melee") {
+          equipDiv.append(`
+          <tr><th> Damage: </th><td> ${res.damage.damage_dice} </td></tr>
+          <tr><th> Damage Type: </th><td> ${res.damage.damage_type.name} </td></tr>
+          <tr><th> Range: </th><td> ${res.range.normal} </td></tr>
+          <tr><th> Damage: </th><td> ${res.damage.damage_dice} </td></tr>
         `);
+        } else {
+          equipDiv.append(`
+          <tr><th> Damage: </th><td> ${res.damage.damage_dice} </td></tr>
+          <tr><th> Damage Type: </th><td> ${res.damage.damage_type.name} </td></tr>
+          <tr><th> Range: </th><td> ${res.range.normal} / ${res.range.long} </td></tr>
+          <tr><th> Damage: </th><td> ${res.damage.damage_dice} </td></tr>
+        `);
+        }
         break;
       default:
         equipDiv.html(
