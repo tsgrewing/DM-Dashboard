@@ -109,7 +109,7 @@ $(document).ready(() => {
     updateMonster(monsterUrl);
   });
 
-  equipSelect.change(function() {
+  equipSelect.on("change",function() {
     equipDiv.empty();
     const equipUrl = $(this)
       .children("option:selected")
