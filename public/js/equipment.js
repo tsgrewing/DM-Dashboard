@@ -1,14 +1,14 @@
 /* eslint-disable indent */
 const equipSelect = $("#equipSelect");
-const equipDiv = $("equipDiv");
+const equipDiv = $("#equipDiv");
 
 const updateEquipment = url => {
   $.ajax({
     url: `https://www.dnd5eapi.co${url}`,
     method: "GET"
   }).then(res => {
-    console.log(res);
-    if (res.desc) {
+    if (res.desc !== undefined) {
+      console.log(res.desc);
       equipDiv.html(
         `<tr><th> Category: </th> <td> ${res.equipment_category.name}
             <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
@@ -17,6 +17,7 @@ const updateEquipment = url => {
             `
       );
     } else {
+      console.log(`error: ${res.desc}`);
       equipDiv.html(
         `<tr><th> Category: </th> <td> ${res.equipment_category.name}
       <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
@@ -28,7 +29,8 @@ const updateEquipment = url => {
     switch (res.equipment_category.index) {
       case "adventuring-gear":
         if (res.gear_category.index === "equipment-packs") {
-          equipDiv.append(`
+          equipDiv.html(`
+              <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
               <tr><th> Contents: </th></tr>
               `);
           res.contents.forEach(elem => {
@@ -49,15 +51,17 @@ const updateEquipment = url => {
       case "mounts-and-vehicles":
         switch (res.vehicle_category) {
           case "Mounts and Other Animals":
-            equipDiv.append(`
-            <tr><th> Speed: </th><td> ${res.speed} </td></tr>
+            equipDiv.html(`
+            <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
+            <tr><th> Speed: </th><td> ${res.speed.quantity} ${res.speed.unit} </td></tr>
             <tr><th> Capacity: </th><td> ${res.capacity} </td></tr>
             `);
             break;
           case "Waterborne Vehicles":
-            equipDiv.append(
-              `<tr><th> Speed: </th><td> ${res.speed} </td></tr>`
-            );
+            equipDiv.html(`
+            <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
+            <tr><th> Vehicle Category: </th> <td> ${res.vehicle_category} </td></tr>
+            <tr><th> Speed: </th><td> ${res.speed.quantity} ${res.speed.unit} </td></tr>`);
             break;
           default:
             break;
@@ -81,11 +85,6 @@ const updateEquipment = url => {
         }
         break;
       default:
-        equipDiv.html(
-          `<tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
-          <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
-          `
-        );
         break;
     }
   });
