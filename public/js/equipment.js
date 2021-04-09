@@ -39,7 +39,11 @@ const updateEquipment = url => {
         break;
       case "armor":
         equipDiv.append(`
-          <tr><th>  </th><td>  </td></tr>
+          <tr><th> Category: </th><td> ${res.armor_category} </td></tr>
+          <tr><th> Base AC: </th><td> ${res.armor__class.base} </td></tr>
+          <tr><th> Dex Bonus: </th><td> ${res.armor_class.dex_bonus.toString()} </td></tr>
+          <tr><th> STR Min: </th><td> ${res.str_minimum} </td></tr>
+          <tr><th> Stealth Disadvantage  </th><td> ${res.stealth_disadvantage.toString()} </td></tr>
         `);
         break;
       case "mounts-and-vehicles":
