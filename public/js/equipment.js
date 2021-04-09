@@ -13,7 +13,7 @@ const updateEquipment = url => {
         `<tr><th> Category: </th> <td> ${res.equipment_category.name}
             <tr><th> Cost: </th> <td> ${res.cost.quantity} ${res.cost.unit}</td></tr>
             <tr><th> Weight: </th> <td> ${res.weight} lbs</td></tr>
-            <tr><th> Description: </th> <td> ${res.desc} </td></tr>
+            <tr><th> Description: </th> <td> ${res.desc.join(" ")} </td></tr>
             `
       );
     } else {
