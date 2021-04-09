@@ -27,19 +27,15 @@ const updateEquipment = url => {
     // determine what type of equipment it is and display info accordingly
     switch (res.equipment_category.index) {
       case "adventuring-gear":
-        if (res.gear_category.index){
-          switch(res.gear_category.index) {
-            case "equipment-packs":
-              equipDiv.append(`
+        if (res.gear_category.index === "equipment-packs") {
+          equipDiv.append(`
               <tr><th> Contents: </th></tr>
               `);
-              (res.contents).forEach(elem => {
-                equipDiv.append(`
-                <tr><td>${elem.item.name}</td><td> x ${elem.quantity}`)
-              });
-              break;
-          }
-        } else if ()
+          res.contents.forEach(elem => {
+            equipDiv.append(`
+                <tr><td>${elem.item.name}</td><td> x ${elem.quantity}`);
+          });
+        }
         break;
       case "armor":
         equipDiv.append(`
@@ -47,94 +43,64 @@ const updateEquipment = url => {
         `);
         break;
       case "equipment-packs":
-
         break;
       case "gaming-sets":
-
         break;
       case "heavy-armor":
-
         break;
       case "holy-symbols":
-
         break;
       case "kits":
-
         break;
       case "land-vehicles":
-
         break;
       case "light-armor":
-
         break;
       case "matrial-melee-weapons":
-
         break;
       case "martial-ranged-weapons":
-
         break;
       case "medium-armor":
-
         break;
       case "mounts-and-other-animals":
-
         break;
       case "mounts-and-vehicles":
-
         break;
       case "musical-intstruments":
-
         break;
       case "other-tools":
-
         break;
       case "potion":
-
         break;
       case "ring":
-
         break;
       case "rod":
-
         break;
       case "scroll":
-
         break;
       case "shields":
-
         break;
       case "simple-melee-weapons":
-
         break;
       case "simple-ranged-weapons":
-
         break;
       case "simple-weapons":
-
         break;
       case "staff":
-
         break;
       case "standard-gear":
-
         break;
       case "tack-harness-and-drawn-vehicles":
-
         break;
       case "tools":
-
         break;
       case "wand":
-
         break;
       case "waterborne-vehicles":
-
         break;
       case "weapon":
-
         break;
       case "wondrous-items":
-
         break;
       default:
         equipDiv.html(
