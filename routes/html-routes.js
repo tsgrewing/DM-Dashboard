@@ -77,7 +77,17 @@ module.exports = function(app) {
               equipment: equipRes.results
             };
             hbsObject = { ...hbsObject, ...equipObj };
-            res.render("index", hbsObject);
+
+            $.ajax({
+              url: "https://www.dnd5eapi.co/api/magic-items",
+              method: "GET"
+            }).then(magicRes => {
+              const magicObj = {
+                equipment: magicObj.results
+              };
+              hbsObject = { ...hbsObject, ...magicObj };
+              res.render("index", hbsObject);
+            });
           });
         });
       });
