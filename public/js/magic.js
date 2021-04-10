@@ -20,5 +20,5 @@ magicSelect.on("change", function() {
   const magicUrl = $(this)
     .children("option:selected")
     .data("url");
-  updateEquipment(magicUrl);
+  updateMagic(magicUrl);
 });

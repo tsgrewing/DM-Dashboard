@@ -35,6 +35,25 @@
                         {{!-- Will be dynamically populated with javascript on change of the select --}}
                     </table>
                 </div>
+
+                {{!-- Magic Item Div --}}
+                <div class="boxWrapper" id="magicWrapper">
+                    {{!-- drop down populated with characters from database --}}
+                    <label for="magicSelect">Magic Items</label>
+                    <select id="magicSelect" class="form-control">
+                        {{#each magic}}
+                            <option class="magicItem" data-url="{{this.url}}">
+                                {{this.name}}
+                            </option>
+                        {{/each}}
+                    </select>
+                    {{!-- div to be populated by whichever character is selected in dropdown --}}
+                    <table id="magicDiv">
+                        {{!-- Will be dynamically populated with javascript on change of the select --}}
+                    </table>
+                </div>
+
+
         </div>
         {{!-- div to hold generated map from rot.js(or similar) --}}
         <div>
@@ -148,6 +167,7 @@
     <script src="js/maps.js"></script>
     <script src="js/dice.js"></script>
     <script src="js/equipment.js"></script>
+    <script src="js/magic.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
              

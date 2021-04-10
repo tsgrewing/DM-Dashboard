@@ -68,8 +68,9 @@ const updateEquipment = url => {
         }
         break;
       case "weapon":
-        if (res.weapon_range === "melee") {
+        if (res.weapon_range === "Melee") {
           equipDiv.append(`
+          <tr><th> Type: </th><td> ${res.properties[0].name} </td></tr>
           <tr><th> Damage: </th><td> ${res.damage.damage_dice} </td></tr>
           <tr><th> Damage Type: </th><td> ${res.damage.damage_type.name} </td></tr>
           <tr><th> Range: </th><td> ${res.range.normal} </td></tr>
@@ -77,6 +78,7 @@ const updateEquipment = url => {
         `);
         } else {
           equipDiv.append(`
+          <tr><th> Type: </th><td> ${res.properties[0].name} </td></tr>
           <tr><th> Damage: </th><td> ${res.damage.damage_dice} </td></tr>
           <tr><th> Damage Type: </th><td> ${res.damage.damage_type.name} </td></tr>
           <tr><th> Range: </th><td> ${res.range.normal} / ${res.range.long} </td></tr>
