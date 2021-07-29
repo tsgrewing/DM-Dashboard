@@ -41,7 +41,8 @@ const generateCharacter = () => {
     wis: stats[4],
     cha: stats[5],
     level: 1,
-    xp: 0
+    xp: 0,
+    UserId: res.req.user.id
   };
   createChar(newChar);
 };

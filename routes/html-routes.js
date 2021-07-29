@@ -46,7 +46,11 @@ module.exports = function(app) {
 
   const renderIndex = res => {
     // get character info from database
-    db.Character.findAll().then(data => {
+    db.Character.findAll({
+      where: {
+        UserId: res.req.user.id
+      }
+    }).then(data => {
       const charObj = {
         characters: data
       };

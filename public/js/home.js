@@ -56,6 +56,9 @@ $(document).ready(() => {
         `<tr><th> Size: </th> <td> ${res.size}</td></tr>
       <tr><th> Type: </th> <td> ${res.type}</td></tr>
       <tr><th> Alignment: </th> <td> ${res.alignment}</td></tr>
+      <tr><th> Size: </th> <td> ${res.size} </td></tr>
+      <tr><th> Challenge Rating: </th> <td> ${res.challenge_rating}</td></tr>
+      <tr><th> XP: </th> <td> ${res.xp}</td></tr>
       <tr><th> Armor Class: </th> <td> ${res.armor_class}</td></tr>
       <tr><th> Hit Points: </th> <td> ${res.hit_points}</td></tr>
       <tr><th> Hit Dice: </th> <td> ${res.hit_dice}</td></tr>
@@ -69,7 +72,6 @@ $(document).ready(() => {
       );
     });
   };
-
 
   charSelect.on("change", function() {
     charDiv.empty();
@@ -95,9 +97,6 @@ $(document).ready(() => {
     updateMonster(monsterUrl);
   });
 
-
-
-  
   // Draggable Interaction
   $(() => {
     $(".boxWrapper").draggable({ containment: "body" });

@@ -30,7 +30,8 @@ passport.use(
           });
         }
         // If none of the above, return the user
-        return done(null, dbUser);
+        const creator = dbUser.dataValues.id;
+        return done(null, dbUser, creator);
       });
     }
   )
